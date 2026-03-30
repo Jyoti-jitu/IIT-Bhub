@@ -14,14 +14,14 @@ const DOMAIN_CONFIG = {
 };
 
 const ProjectCard = ({ project, onClick, listMode }) => {
-  const typeConf = TYPE_CONFIG[project.type] || { label: project.type, color: 'text-slate-400 bg-slate-800 border-slate-700' };
-  const domConf = DOMAIN_CONFIG[project.domain] || { color: 'text-slate-400 bg-slate-800 border-slate-700' };
+  const typeConf = TYPE_CONFIG[project.type] || { label: project.type, color: 'text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700' };
+  const domConf = DOMAIN_CONFIG[project.domain] || { color: 'text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-700' };
 
   if (listMode) {
     return (
       <div
         onClick={onClick}
-        className="group relative flex items-center gap-5 p-5 bg-slate-900 border border-slate-800 rounded-2xl hover:border-blue-500/30 hover:bg-slate-900/80 transition-all cursor-pointer"
+        className="group relative flex items-center gap-5 p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-blue-500/30 hover:bg-white dark:bg-slate-900/80 transition-all cursor-pointer"
       >
         {/* Hover glow */}
         <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-600/0 to-violet-600/0 group-hover:from-blue-600/5 group-hover:to-violet-600/5 transition-all pointer-events-none" />
@@ -44,10 +44,10 @@ const ProjectCard = ({ project, onClick, listMode }) => {
             )}
             <span className="ml-auto text-xs font-bold text-slate-600">{project.year}</span>
           </div>
-          <h3 className="font-bold text-white text-base truncate group-hover:text-blue-400 transition-colors">
+          <h3 className="font-bold text-slate-900 dark:text-white text-base truncate group-hover:text-blue-400 transition-colors">
             {project.title}
           </h3>
-          <p className="text-sm text-slate-500 truncate mt-0.5">{project.description}</p>
+          <p className="text-sm text-slate-500 dark:text-slate-500 truncate mt-0.5">{project.description}</p>
         </div>
 
         <div className="shrink-0 flex gap-2">
@@ -57,7 +57,7 @@ const ProjectCard = ({ project, onClick, listMode }) => {
               target="_blank"
               rel="noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-all flex items-center justify-center"
+              className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:text-white transition-all flex items-center justify-center"
               title="GitHub"
             >
               <GitBranch size={15} />
@@ -75,7 +75,7 @@ const ProjectCard = ({ project, onClick, listMode }) => {
               <Play size={15} />
             </a>
           )}
-          <div className="p-2 rounded-xl bg-slate-800 text-slate-500 opacity-0 group-hover:opacity-100 transition-all">
+          <div className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-500 opacity-0 group-hover:opacity-100 transition-all">
             <ExternalLink size={15} />
           </div>
         </div>
@@ -86,7 +86,7 @@ const ProjectCard = ({ project, onClick, listMode }) => {
   return (
     <div
       onClick={onClick}
-      className="group relative flex flex-col bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-slate-700 transition-all duration-300 cursor-pointer h-full"
+      className="group relative flex flex-col bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-slate-300 dark:border-slate-700 transition-all duration-300 cursor-pointer h-full"
     >
       {/* Top colour accent bar */}
       <div
@@ -120,12 +120,12 @@ const ProjectCard = ({ project, onClick, listMode }) => {
         </div>
 
         {/* Title */}
-        <h3 className="text-lg font-bold text-white mb-3 leading-snug group-hover:text-blue-400 transition-colors line-clamp-2">
+        <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-3 leading-snug group-hover:text-blue-400 transition-colors line-clamp-2">
           {project.title}
         </h3>
 
         {/* Description */}
-        <p className="text-sm text-slate-400 leading-relaxed mb-5 line-clamp-3 flex-grow">
+        <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-5 line-clamp-3 flex-grow">
           {project.description}
         </p>
 
@@ -134,13 +134,13 @@ const ProjectCard = ({ project, onClick, listMode }) => {
           {project.tech.slice(0, 4).map((t) => (
             <span
               key={t}
-              className="px-2 py-0.5 text-[10px] font-semibold text-slate-400 bg-slate-800 border border-slate-700/60 rounded-md"
+              className="px-2 py-0.5 text-[10px] font-semibold text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700/60 rounded-md"
             >
               {t}
             </span>
           ))}
           {project.tech.length > 4 && (
-            <span className="px-2 py-0.5 text-[10px] font-semibold text-slate-500 bg-slate-800 border border-slate-700/60 rounded-md">
+            <span className="px-2 py-0.5 text-[10px] font-semibold text-slate-500 dark:text-slate-500 bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700/60 rounded-md">
               +{project.tech.length - 4} more
             </span>
           )}
@@ -148,11 +148,11 @@ const ProjectCard = ({ project, onClick, listMode }) => {
 
         {/* Metrics preview */}
         {project.metrics && project.metrics.length > 0 && (
-          <div className="flex gap-3 mb-5 p-3 bg-slate-800/60 rounded-xl border border-slate-700/40">
+          <div className="flex gap-3 mb-5 p-3 bg-slate-100 dark:bg-slate-800/60 rounded-xl border border-slate-300 dark:border-slate-700/40">
             {project.metrics.slice(0, 2).map((m) => (
               <div key={m.label} className="flex-1 text-center">
-                <div className="text-sm font-extrabold text-white">{m.value}</div>
-                <div className="text-[9px] text-slate-500 uppercase tracking-wider mt-0.5">{m.label}</div>
+                <div className="text-sm font-extrabold text-slate-900 dark:text-white">{m.value}</div>
+                <div className="text-[9px] text-slate-500 dark:text-slate-500 uppercase tracking-wider mt-0.5">{m.label}</div>
               </div>
             ))}
           </div>
@@ -165,13 +165,13 @@ const ProjectCard = ({ project, onClick, listMode }) => {
               href={project.github}
               target="_blank"
               rel="noreferrer"
-              className="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-bold rounded-xl transition-all"
+              className="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:text-white text-xs font-bold rounded-xl transition-all"
               onClick={(e) => e.stopPropagation()}
             >
               <GitBranch size={14} /> GitHub
             </a>
           ) : (
-            <div className="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 bg-slate-900 text-slate-600 text-xs font-bold rounded-xl cursor-not-allowed border border-slate-800">
+            <div className="flex-1 flex items-center justify-center gap-2 py-2.5 px-3 bg-white dark:bg-slate-900 text-slate-600 text-xs font-bold rounded-xl cursor-not-allowed border border-slate-200 dark:border-slate-800">
               <Lock size={13} /> Private
             </div>
           )}
@@ -189,7 +189,7 @@ const ProjectCard = ({ project, onClick, listMode }) => {
           ) : null}
 
           <button
-            className="p-2.5 bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white rounded-xl transition-all"
+            className="p-2.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:text-white rounded-xl transition-all"
             onClick={onClick}
             title="View details"
           >

@@ -8,7 +8,7 @@ const MemberCard = ({ person, index }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: '-50px' }}
     transition={{ duration: 0.4, delay: (index % 4) * 0.1 }}
-    className="group relative flex flex-col bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden hover:border-blue-500/30 transition-all duration-300 shadow-lg cursor-pointer h-full"
+    className="group relative flex flex-col bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden hover:border-blue-500/30 transition-all duration-300 shadow-lg cursor-pointer h-full"
   >
     {/* Hover glow */}
     <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/0 via-violet-600/0 to-blue-600/0 group-hover:from-blue-600/5 group-hover:via-violet-600/5 group-hover:to-blue-600/10 transition-colors duration-500 pointer-events-none rounded-3xl" />
@@ -18,7 +18,7 @@ const MemberCard = ({ person, index }) => (
       <div className="relative w-28 h-28 mb-4">
         <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500/20 to-violet-500/20 group-hover:from-blue-500/40 group-hover:to-violet-500/40 blur-xl transition-all duration-300" />
         <div className="w-full h-full p-1 rounded-full bg-gradient-to-tr from-slate-700 to-slate-800 group-hover:from-blue-500 group-hover:to-violet-500 transition-all duration-300 relative z-10">
-          <div className="w-full h-full rounded-full overflow-hidden bg-slate-900">
+          <div className="w-full h-full rounded-full overflow-hidden bg-white dark:bg-slate-900">
             <img
               src={person.image}
               alt={person.name}
@@ -29,10 +29,10 @@ const MemberCard = ({ person, index }) => (
       </div>
 
       {/* Basic Info */}
-      <h3 className="text-xl font-bold text-white mb-1 leading-snug group-hover:text-blue-400 transition-colors">
+      <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-1 leading-snug group-hover:text-blue-400 transition-colors">
         {person.name}
       </h3>
-      <p className="text-sm font-semibold text-slate-400 mb-5">
+      <p className="text-sm font-semibold text-slate-600 dark:text-slate-400 mb-5">
         {person.role}
       </p>
 
@@ -41,7 +41,7 @@ const MemberCard = ({ person, index }) => (
         {person.researchInterests.slice(0, 3).map((interest) => (
           <span
             key={interest}
-            className="px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-slate-500 bg-slate-950 border border-slate-800 rounded-lg group-hover:border-slate-700 transition-colors truncate w-full"
+            className="px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-slate-700 dark:text-slate-500 bg-slate-100 dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-lg group-hover:border-slate-400 dark:group-hover:border-slate-700 transition-colors truncate w-full"
             title={interest}
           >
             {interest}
@@ -55,14 +55,14 @@ const MemberCard = ({ person, index }) => (
       </div>
 
       {/* Social Links Toolbar */}
-      <div className="flex justify-center gap-3 mt-auto w-full pt-4 border-t border-slate-800/60">
+      <div className="flex justify-center gap-3 mt-auto w-full pt-4 border-t border-slate-200 dark:border-slate-800/60">
         {person.links.scholar && (
           <a
             href={person.links.scholar}
             target="_blank"
             rel="noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-all group/btn"
+            className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:text-white transition-all group/btn"
             title="Google Scholar"
           >
             <BookOpen size={16} className="group-hover/btn:text-blue-400 transition-colors" />
@@ -74,7 +74,7 @@ const MemberCard = ({ person, index }) => (
             target="_blank"
             rel="noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-all group/btn"
+            className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:text-white transition-all group/btn"
             title="LinkedIn"
           >
             <Link size={16} className="group-hover/btn:text-blue-400 transition-colors" />
@@ -86,10 +86,10 @@ const MemberCard = ({ person, index }) => (
             target="_blank"
             rel="noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-all group/btn"
+            className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:text-white transition-all group/btn"
             title="GitHub"
           >
-            <GitBranch size={16} className="group-hover/btn:text-white transition-colors" />
+            <GitBranch size={16} className="group-hover/btn:text-slate-900 dark:text-white transition-colors" />
           </a>
         )}
         {/* Placeholder if no links exist */}

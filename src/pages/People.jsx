@@ -7,8 +7,8 @@ import { motion } from 'framer-motion';
 
 const SectionDivider = ({ title }) => (
   <div className="flex items-center gap-4 mb-10 w-full">
-    <div className="w-12 h-px bg-slate-700" />
-    <h2 className="text-xl md:text-2xl font-extrabold text-white uppercase tracking-widest shrink-0">
+    <div className="w-12 h-px bg-slate-200 dark:bg-slate-700" />
+    <h2 className="text-xl md:text-2xl font-extrabold text-slate-900 dark:text-white uppercase tracking-widest shrink-0">
       {title}
     </h2>
     <div className="flex-1 h-px bg-gradient-to-r from-slate-700 to-transparent" />
@@ -23,7 +23,7 @@ const People = () => {
   const alumni = useMemo(() => PEOPLE.filter((p) => p.category === 'Alumni'), []);
 
   return (
-    <main className="min-h-screen bg-slate-950 text-white">
+    <main className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white">
       {/* Premium Hero Header */}
       <PeopleHeader />
 

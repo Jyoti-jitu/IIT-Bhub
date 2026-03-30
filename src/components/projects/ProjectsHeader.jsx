@@ -10,7 +10,7 @@ const STATS = [
 ];
 
 const ProjectsHeader = ({ totalCount }) => (
-  <section className="relative pt-28 pb-20 overflow-hidden bg-slate-950">
+  <section className="relative pt-28 pb-20 overflow-hidden bg-slate-50 dark:bg-slate-950">
     {/* Grid */}
     <div
       className="absolute inset-0 opacity-40 pointer-events-none"
@@ -44,7 +44,7 @@ const ProjectsHeader = ({ totalCount }) => (
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.08 }}
-          className="text-5xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.05] mb-6"
+          className="text-5xl md:text-7xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.05] mb-6"
         >
           Our{' '}
           <span className="relative inline-block">
@@ -73,7 +73,7 @@ const ProjectsHeader = ({ totalCount }) => (
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.16 }}
-          className="max-w-2xl mx-auto text-lg md:text-xl text-slate-400 leading-relaxed mb-14"
+          className="max-w-2xl mx-auto text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-14"
         >
           From foundational AI research to real-world deployments — student
           theses, BTP innovations, and open-source prototypes built at the
@@ -89,14 +89,14 @@ const ProjectsHeader = ({ totalCount }) => (
         >
           {STATS.map(({ icon, label, value }) => (
             <div key={label} className="flex items-center gap-3 group">
-              <div className="w-9 h-9 rounded-xl bg-slate-800 border border-slate-700/60 flex items-center justify-center text-blue-400 group-hover:border-blue-500/50 transition-colors">
+              <div className="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-300 dark:border-slate-700/60 flex items-center justify-center text-blue-400 group-hover:border-blue-500/50 transition-colors">
                 {icon}
               </div>
               <div className="text-left">
-                <div className="text-xl font-extrabold text-white leading-none">
+                <div className="text-xl font-extrabold text-slate-900 dark:text-white leading-none">
                   {value}
                 </div>
-                <div className="text-xs text-slate-500 mt-0.5">{label}</div>
+                <div className="text-xs text-slate-500 dark:text-slate-500 mt-0.5">{label}</div>
               </div>
             </div>
           ))}
@@ -105,7 +105,7 @@ const ProjectsHeader = ({ totalCount }) => (
     </div>
 
     {/* Bottom fade */}
-    <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-slate-950 to-transparent pointer-events-none" />
+    <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-slate-50 dark:from-slate-950 to-transparent pointer-events-none" />
   </section>
 );
 

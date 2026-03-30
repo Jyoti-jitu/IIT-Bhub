@@ -34,7 +34,7 @@ const ChipGroup = ({ options, active, setActive, colorMap }) => (
                 ? opt === options[0]
                   ? 'bg-blue-600 border-blue-500 text-white shadow-lg shadow-blue-600/25'
                   : `${color} border`
-                : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white hover:border-slate-600'
+                : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:text-white hover:border-slate-600'
             }`}
         >
           {opt}
@@ -70,19 +70,19 @@ const ProjectsFilterBar = ({
       {/* Search bar */}
       <div className="relative group">
         <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-600/20 to-violet-600/20 opacity-0 group-focus-within:opacity-100 transition-opacity blur-sm -z-10" />
-        <div className="flex items-center gap-3 px-5 py-3.5 bg-slate-900 border border-slate-800 group-focus-within:border-blue-500/50 rounded-2xl transition-all">
-          <Search size={17} className="text-slate-500 group-focus-within:text-blue-400 transition-colors shrink-0" />
+        <div className="flex items-center gap-3 px-5 py-3.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 group-focus-within:border-blue-500/50 rounded-2xl transition-all">
+          <Search size={17} className="text-slate-500 dark:text-slate-500 group-focus-within:text-blue-400 transition-colors shrink-0" />
           <input
             type="text"
             placeholder="Search by title, technology, or keyword..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="flex-1 bg-transparent text-sm text-white placeholder-slate-500 focus:outline-none"
+            className="flex-1 bg-transparent text-sm text-slate-900 dark:text-white placeholder-slate-500 focus:outline-none"
           />
           {search && (
             <button
               onClick={() => setSearch('')}
-              className="text-slate-500 hover:text-white transition-colors"
+              className="text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:text-white transition-colors"
             >
               <X size={15} />
             </button>
@@ -91,10 +91,10 @@ const ProjectsFilterBar = ({
       </div>
 
       {/* Filter chip rows */}
-      <div className="p-4 bg-slate-900/80 border border-slate-800 rounded-2xl space-y-4 backdrop-blur-sm">
+      <div className="p-4 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 rounded-2xl space-y-4 backdrop-blur-sm">
         <div className="flex items-center gap-2 mb-3">
-          <SlidersHorizontal size={14} className="text-slate-500" />
-          <span className="text-xs font-bold uppercase tracking-widest text-slate-500">
+          <SlidersHorizontal size={14} className="text-slate-500 dark:text-slate-500" />
+          <span className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-500">
             Filters
           </span>
           {hasActiveFilters && (
@@ -125,7 +125,7 @@ const ProjectsFilterBar = ({
             />
           </div>
 
-          <div className="hidden sm:block w-px bg-slate-800" />
+          <div className="hidden sm:block w-px bg-slate-100 dark:bg-slate-800" />
 
           <div className="flex-1 space-y-2">
             <p className="text-[10px] font-bold uppercase tracking-widest text-slate-600">
@@ -139,7 +139,7 @@ const ProjectsFilterBar = ({
             />
           </div>
 
-          <div className="hidden sm:block w-px bg-slate-800" />
+          <div className="hidden sm:block w-px bg-slate-100 dark:bg-slate-800" />
 
           <div className="flex-1 space-y-2">
             <p className="text-[10px] font-bold uppercase tracking-widest text-slate-600">

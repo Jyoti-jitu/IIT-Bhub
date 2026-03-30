@@ -52,7 +52,7 @@ const Projects = () => {
   };
 
   return (
-    <main className="min-h-screen bg-slate-950 text-white">
+    <main className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white">
       {/* Header hero */}
       <ProjectsHeader totalCount={projectsData.length} />
 
@@ -70,24 +70,24 @@ const Projects = () => {
           {/* Toolbar */}
           <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between mb-8">
             <div className="flex items-center gap-3">
-              <h2 className="text-2xl font-bold text-white">All Projects</h2>
+              <h2 className="text-2xl font-bold text-slate-900 dark:text-white">All Projects</h2>
               <span className="px-2.5 py-0.5 text-xs font-bold rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30">
                 {filteredProjects.length}
               </span>
             </div>
 
             {/* View toggle */}
-            <div className="flex items-center gap-2 p-1 bg-slate-900 border border-slate-800 rounded-xl">
+            <div className="flex items-center gap-2 p-1 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl">
               <button
                 onClick={() => setViewMode('grid')}
-                className={`p-2 rounded-lg transition-all ${viewMode === 'grid' ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' : 'text-slate-400 hover:text-white'}`}
+                className={`p-2 rounded-lg transition-all ${viewMode === 'grid' ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:text-white'}`}
                 aria-label="Grid view"
               >
                 <LayoutGrid size={16} />
               </button>
               <button
                 onClick={() => setViewMode('list')}
-                className={`p-2 rounded-lg transition-all ${viewMode === 'list' ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' : 'text-slate-400 hover:text-white'}`}
+                className={`p-2 rounded-lg transition-all ${viewMode === 'list' ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:text-white'}`}
                 aria-label="List view"
               >
                 <List size={16} />
@@ -138,13 +138,13 @@ const Projects = () => {
                 animate={{ opacity: 1 }}
                 className="flex flex-col items-center justify-center py-28 text-center"
               >
-                <div className="w-20 h-20 mb-6 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center text-4xl">
+                <div className="w-20 h-20 mb-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-4xl">
                   🔬
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
                   No projects found
                 </h3>
-                <p className="text-slate-400 max-w-xs">
+                <p className="text-slate-600 dark:text-slate-400 max-w-xs">
                   Try adjusting your filters or search query to discover more
                   projects.
                 </p>
