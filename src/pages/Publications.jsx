@@ -6,6 +6,7 @@ import PublicationCard from '../components/publications/PublicationCard';
 const Publications = () => {
   const [activeYear, setActiveYear] = useState('All Years');
   const [activeType, setActiveType] = useState('All Types');
+  const [searchQuery, setSearchQuery] = useState('');
 
   // Hardcoded publications data 
   const publicationsData = [
@@ -59,21 +60,27 @@ const Publications = () => {
   const filteredPublications = publicationsData.filter(pub => {
     const matchYear = activeYear === 'All Years' || pub.year === activeYear;
     const matchType = activeType === 'All Types' || pub.type === activeType;
-    return matchYear && matchType;
+    const matchSearch = 
+      pub.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+      pub.authors.toLowerCase().includes(searchQuery.toLowerCase());
+      
+    return matchYear && matchType && matchSearch;
   });
 
   return (
     <main className="min-h-screen bg-white dark:bg-slate-950 transition-colors duration-300">
       <Header />
-      
-      <section className="pb-24 pt-8">
+
+      <section className="pb-32 pt-8">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <FilterBar 
-            activeYear={activeYear} 
+
+          <FilterBar
+            activeYear={activeYear}
             setActiveYear={setActiveYear}
             activeType={activeType}
             setActiveType={setActiveType}
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
           />
 
           <div className="mt-8 space-y-6">
@@ -87,7 +94,7 @@ const Publications = () => {
               </div>
             )}
           </div>
-          
+
         </div>
       </section>
     </main>

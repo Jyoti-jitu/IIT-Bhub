@@ -9,7 +9,7 @@ const PublicationCard = ({ publication }) => {
 
   return (
     <>
-      <motion.div 
+      <motion.div
         layout
         className="group flex flex-col p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-blue-300 dark:hover:border-blue-500/50 transition-all duration-300"
       >
@@ -25,7 +25,7 @@ const PublicationCard = ({ publication }) => {
         <p className="text-sm text-slate-800 dark:text-slate-300 font-medium mb-1 transition-colors duration-300">
           <span className="text-blue-700 dark:text-blue-400">{publication.authors}</span>
         </p>
-        
+
         <p className="text-sm text-slate-600 dark:text-slate-500 italic mb-4 transition-colors duration-300">
           {publication.venue} &mdash; {publication.type}
         </p>
@@ -47,8 +47,8 @@ const PublicationCard = ({ publication }) => {
         </AnimatePresence>
 
         <div className="flex flex-wrap items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-800 transition-colors duration-300">
-          
-          <button 
+
+          <button
             onClick={() => setIsExpanded(!isExpanded)}
             className="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-1 transition-colors"
           >
@@ -70,7 +70,7 @@ const PublicationCard = ({ publication }) => {
                 <LinkIcon size={14} /> DOI
               </a>
             )}
-            <button 
+            <button
               onClick={() => setShowCitation(true)}
               className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold uppercase rounded bg-blue-600 text-white hover:bg-blue-700 transition-colors"
             >
@@ -81,10 +81,10 @@ const PublicationCard = ({ publication }) => {
         </div>
       </motion.div>
 
-      <CitationModal 
-        isOpen={showCitation} 
-        onClose={() => setShowCitation(false)} 
-        publication={publication} 
+      <CitationModal
+        isOpen={showCitation}
+        onClose={() => setShowCitation(false)}
+        publication={publication}
       />
     </>
   );

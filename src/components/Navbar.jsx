@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Rocket, ChevronRight, Search, Sun, Moon } from 'lucide-react';
+import { Menu, X, Rocket, ChevronRight, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -68,9 +68,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             >
               {darkMode ? <Sun size={20} /> : <Moon size={20} />}
             </button>
-            <button className="text-slate-700 hover:text-blue-600 dark:text-slate-300 dark:hover:text-white transition-colors p-2">
-              <Search size={20} />
-            </button>
+
             <button className="px-5 py-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium transition-all shadow-[0_0_15px_rgba(59,130,246,0.3)] hover:shadow-[0_0_25px_rgba(59,130,246,0.5)] flex items-center gap-2">
               Explore Research
               <ChevronRight size={16} />
