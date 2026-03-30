@@ -19,9 +19,9 @@ const Navbar = ({ darkMode, setDarkMode }) => {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Research', href: '/research' },
-    { name: 'Projects', href: '/#projects' },
+    { name: 'Projects', href: '/projects' },
     { name: 'Publications', href: '/publications' },
-    { name: 'Team', href: '/#team' },
+    { name: 'Team', href: '/team' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -29,7 +29,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'glass py-3' : 'bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 tracking-wide">
         <div className="flex justify-between items-center">
-          {/* Logo */}
+          {/* Logo */} 
           <Link to="/" className="flex items-center gap-2 group">
             <div className="w-10 h-10 rounded-lg bg-gradient-to-tr from-blue-600 to-purple-600 flex items-center justify-center group-hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-shadow">
               <span className="text-white font-bold text-xl">AI</span>

@@ -5,6 +5,8 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Research from './pages/Research';
 import Publications from './pages/Publications';
+import Projects from './pages/Projects';
+import People from './pages/People';
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -26,6 +28,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/research" element={<Research />} />
           <Route path="/publications" element={<Publications />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/team" element={<People />} />
         </Routes>
 
         <Footer />

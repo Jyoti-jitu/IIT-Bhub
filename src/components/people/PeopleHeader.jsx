@@ -1,17 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Cpu, FlaskConical, Layers3, Sparkles } from 'lucide-react';
+import { Users, BookOpen, GraduationCap, MapPin } from 'lucide-react';
 
 const STATS = [
-  { icon: <Layers3 size={18} />, label: 'Total Projects', value: '10+' },
-  { icon: <Cpu size={18} />, label: 'Open Source', value: '6' },
-  { icon: <FlaskConical size={18} />, label: 'Research Domains', value: '3' },
-  { icon: <Sparkles size={18} />, label: 'Active This Year', value: '4' },
+  { icon: <Users size={18} />, label: 'Lab Members', value: '25+' },
+  { icon: <GraduationCap size={18} />, label: 'PhD Scholars', value: '12' },
+  { icon: <BookOpen size={18} />, label: 'Alumni Network', value: '40+' },
+  { icon: <MapPin size={18} />, label: 'Location', value: 'IIT Campus' },
 ];
 
-const ProjectsHeader = ({ totalCount }) => (
+const PeopleHeader = () => (
   <section className="relative pt-28 pb-20 overflow-hidden bg-slate-950">
-    {/* Grid */}
+    {/* Grid Background */}
     <div
       className="absolute inset-0 opacity-40 pointer-events-none"
       style={{
@@ -21,22 +21,22 @@ const ProjectsHeader = ({ totalCount }) => (
       }}
     />
 
-    {/* Orbs */}
-    <div className="absolute top-10 left-1/3 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
-    <div className="absolute top-20 right-1/4 w-[350px] h-[350px] bg-violet-600/10 rounded-full blur-[100px] pointer-events-none" />
-    <div className="absolute bottom-0 left-0 w-[200px] h-[200px] bg-indigo-500/5 rounded-full blur-[80px] pointer-events-none" />
+    {/* Glow Orbs */}
+    <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-emerald-600/10 rounded-full blur-[120px] pointer-events-none" />
+    <div className="absolute top-20 left-1/4 w-[350px] h-[350px] bg-teal-600/10 rounded-full blur-[100px] pointer-events-none" />
+    <div className="absolute bottom-0 right-10 w-[200px] h-[200px] bg-cyan-500/5 rounded-full blur-[80px] pointer-events-none" />
 
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div className="text-center">
-        {/* Pill badge */}
+        {/* Pill Badge */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-widest"
+          className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full border border-teal-500/30 bg-teal-500/10 text-teal-400 text-xs font-bold uppercase tracking-widest"
         >
-          <Cpu size={13} />
-          AI Research Lab · IIT
+          <Users size={13} />
+          The Minds Behind The Lab
         </motion.div>
 
         {/* Title */}
@@ -52,17 +52,17 @@ const ProjectsHeader = ({ totalCount }) => (
               className="text-transparent bg-clip-text"
               style={{
                 backgroundImage:
-                  'linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #818cf8 100%)',
+                  'linear-gradient(135deg, #2dd4bf 0%, #3b82f6 100%)',
               }}
             >
-              Projects
+              People
             </span>
             {/* Underline glow */}
             <span
               className="absolute -bottom-1 left-0 w-full h-0.5 rounded-full opacity-60"
               style={{
                 backgroundImage:
-                  'linear-gradient(to right, #60a5fa, #a78bfa)',
+                  'linear-gradient(to right, #2dd4bf, #3b82f6)',
               }}
             />
           </span>
@@ -75,12 +75,10 @@ const ProjectsHeader = ({ totalCount }) => (
           transition={{ duration: 0.55, delay: 0.16 }}
           className="max-w-2xl mx-auto text-lg md:text-xl text-slate-400 leading-relaxed mb-14"
         >
-          From foundational AI research to real-world deployments — student
-          theses, BTP innovations, and open-source prototypes built at the
-          frontier of intelligence and engineering.
+          A vibrant community of primary investigators, doctoral scholars, and bright undergraduate researchers driving the frontier of artificial intelligence.
         </motion.p>
 
-        {/* Stats strip */}
+        {/* Stats Strip */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -89,7 +87,7 @@ const ProjectsHeader = ({ totalCount }) => (
         >
           {STATS.map(({ icon, label, value }) => (
             <div key={label} className="flex items-center gap-3 group">
-              <div className="w-9 h-9 rounded-xl bg-slate-800 border border-slate-700/60 flex items-center justify-center text-blue-400 group-hover:border-blue-500/50 transition-colors">
+              <div className="w-9 h-9 rounded-xl bg-slate-800 border border-slate-700/60 flex items-center justify-center text-teal-400 group-hover:border-teal-500/50 transition-colors">
                 {icon}
               </div>
               <div className="text-left">
@@ -109,4 +107,4 @@ const ProjectsHeader = ({ totalCount }) => (
   </section>
 );
 
-export default ProjectsHeader;
+export default PeopleHeader;
